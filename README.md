@@ -51,14 +51,14 @@ sudo mysql -p
 ### 3.2 MySQL: Create User
 
 ```sql
-CREATE USER 'vijay'@'localhost' IDENTIFIED BY 'HelloWorld123#';
+CREATE USER 'saikumar'@'localhost' IDENTIFIED BY 'HelloWorld123#';
 
-# if you encounter <ERROR 1396 (HY000): Operation CREATE USER failed for 'vijay'@'localhost'>
+# if you encounter <ERROR 1396 (HY000): Operation CREATE USER failed for 'saikumar'@'localhost'>
 # https://stackoverflow.com/questions/5555328/error-1396-hy000-operation-create-user-failed-for-jacklocalhost
-DROP USER 'vijay'@'localhost';
-CREATE USER 'vijay'@'localhost' IDENTIFIED BY 'HelloWorld123#';
+DROP USER 'saikumar'@'localhost';
+CREATE USER 'saikumar'@'localhost' IDENTIFIED BY 'HelloWorld123#';
 
-GRANT CREATE, ALTER, DROP, INSERT, UPDATE, DELETE, SELECT, REFERENCES, RELOAD on *.* TO 'vijay'@'localhost' WITH GRANT OPTION;
+GRANT CREATE, ALTER, DROP, INSERT, UPDATE, DELETE, SELECT, REFERENCES, RELOAD on *.* TO 'saikumar'@'localhost' WITH GRANT OPTION;
 
 # when we grant some privileges for a user, running the command flush privileges will reload the grant tables in the mysql database enabling the changes to take effect without reloading or restarting mysql service.
 
@@ -130,7 +130,7 @@ cd ..
 ### 3.6 Build the database
 ```sh
 # update the following environment variables to build-db.sh
-export DATABASE_USER=vijay
+export DATABASE_USER=saikumar
 export DATABASE_PASSWORD=HelloWorld123#
 export DATABASE_SERVER=localhost
 export DATABASE_NAME=result_server
@@ -149,13 +149,13 @@ tmux new -s deployment
 workon result-server
 
 # update the following environment variables in run.sh
-export DATABASE_USER=vijay
+export DATABASE_USER=saikumar
 export DATABASE_PASSWORD=HelloWorld123#
 export DATABASE_SERVER=localhost
 export DATABASE_NAME=result_server
-export MAIL_USERNAME=vijaybomma0106@gmail.com
+export MAIL_USERNAME=saikumar010666@gmail.com
 export MAIL_PASSWORD=yqgfajbztvwqmnyv 
-export MAIL_FROM=vijaybomma0106@gmail.com
+export MAIL_FROM=saikumar010666@gmail.com
 export MAX_ATTEMPTS=3
 export OTP_EXPIRY_SECONDS=60
 # run the server
